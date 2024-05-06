@@ -15,7 +15,7 @@
   \**********************/
 /***/ (() => {
 
-eval("\n\n//# sourceURL=webpack://cashmax-v1/./src/index.js?");
+eval("window.addEventListener(\"DOMContentLoaded\", () => {\r\n    const boxLogin = document.querySelector(\".loginContainer\")\r\n    const showPassword = document.querySelector(\".showPassword\")\r\n    const boxCreate = document.querySelector(\".createContainer\")\r\n    const showBoxSignUp = document.getElementById(\"createContainer\")\r\n    const showBoxLogin = document.getElementById(\"btnCancel\")\r\n\r\n    showBoxSignUp.addEventListener(\"click\", () => {\r\n        boxLogin.classList.add(\"hidden\")\r\n        boxCreate.classList.remove(\"hidden\")\r\n    })\r\n\r\n    showBoxLogin.addEventListener(\"click\", () => {\r\n        boxCreate.classList.add(\"hidden\")\r\n        boxLogin.classList.remove(\"hidden\")\r\n    })\r\n\r\n\r\n    showPassword.addEventListener(\"click\", () => {\r\n        showPassword.classList.toggle(\"show-pass\")        \r\n    })\r\n\r\n})\n\n//# sourceURL=webpack://cashmax-v1/./src/index.js?");
 
 /***/ })
 
