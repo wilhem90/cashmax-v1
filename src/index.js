@@ -1,1 +1,0 @@
-alert("Enviamos o sistema no ar!")
