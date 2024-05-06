@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authentication</title>
+</head>
+<body>
+
+    <!-- Container para logar o usuario -->
+    <div class="loginContainer geral">
+        <h3>Login Account</h3>
+        <input type="email" name="emailLogin" id="mailLogin" placeholder="Email">
+        <div class="boxPassword">
+            <input type="password" name="passwordLogin" id="passwordLogin" placeholder="Password">
+            <img src="/src/imgs/visibility_FILL0.png" alt="Show password">
+            
+        </div>
+
+        <!-- remenber connection and forget password -->
+        <div class="remenberMe">
+            <input type="checkbox" name="remenber" id="boxCheck"><label for="boxCheck" name="boxCheck">remenber-me</label>
+            <a href="#">Forgot Password?</a>
+        </div>
+
+        <button type="submit">Login</button>
+
+        <!-- Vamos ver se nao tem uma account -->
+        <div class="noAccount">
+            <span>Don't have any account?</span>
+            <span id="createContainer">SignUP</span>
+        </div>
+    </div>
+<!-- End of login form -->
+
+
+
+    <!-- Container para criar o usuario -->
+    <div class="createContainer geral">
+        <form method="post">
+            <h3>Create Account</h3>
+            <input type="text" name="fullNameUser" id="fullName" placeholder="Fullname" required>
+            <input type="email" name="emailCreate" id="emailCreate" placeholder="Email" required>
+            <div class="passwordShow">
+                <input type="password" name="createPassword" id="createPassword" placeholder="Password" required>
+                <img src="/src/imgs/visibility_FILL0.png" alt="Show-Password">
+            </div>
+            <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirm Password" required>
+            <div class="boxBtns">
+                <button type="submit" id="sendData">Send</button>
+                <button type="reset">Cancel</button>
+        </form>
+        </div>
+    </div>
+
+
+</body>
+</html>
