@@ -15,7 +15,7 @@
   \**********************/
 /***/ (() => {
 
-eval("alert(\"Enviamos o sistema no ar!\")\n\n//# sourceURL=webpack://cashmax-v1/./src/index.js?");
+eval("\n\n//# sourceURL=webpack://cashmax-v1/./src/index.js?");
 
 /***/ })
 

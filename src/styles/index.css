@@ -8,6 +8,7 @@
 :root {
     --textcolor: white;
     --bgcolor: green;
+    --btncolor: #00bcd2;
 }
 
 body, html {
@@ -18,4 +19,144 @@ body, html {
     align-items: center;
     height: 100%;
     background-image: url("../imgs/aprenderProgramar.jpg");
+    background-size: cover;
+}
+
+.hidden {
+    display: none;
+}
+
+.geral form {
+    width: 400px;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fafafa;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.geral form h3 {
+    background-color: var(--btncolor);
+    padding: 5px;
+    width: 35%;
+    line-height: 25px;
+    text-align: center;
+    color: var(--textcolor);
+    border-radius: 2px;
+    margin-bottom: 30px;
+}
+
+.geral form input[type="email"], input[type="password"], input[type="text"] {
+    line-height: 38px;
+    width: 80%;
+    margin: 10px 0;
+    text-indent: 10px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid black;
+}
+
+.geral form .box-comum {
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+    border: 1px solid black;
+    margin: 5px 0;
+    background-color: white;
+    height: 40px;
+    border-radius: 5px;
+    align-items: center;
+}
+
+.geral form .box-comum input {
+    border: none;
+    outline: none;
+}
+
+.geral form .box-comum img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.geral form .box-comum img:hover {
+    opacity: .5;
+    transition: 0.8s ease;
+}
+
+.geral form > .remenberMe {
+    display: flex;
+    justify-content: center;
+    padding: 0 15px;
+    border: none;
+    background-color: transparent;
+}
+
+.geral form > .remenberMe label {
+    padding-left: 10px;
+    cursor: pointer;
+}
+
+.geral form > .remenberMe a {
+    padding-left: 35px;
+    cursor: pointer;
+}
+
+.geral form > .remenberMe label:hover, a:hover {
+    opacity: 0.5;
+}
+
+.geral form .btn-comun {
+    padding: 10px;
+    width: 50%;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    border-radius: 2px;
+    font-weight: bolder;
+    border: none;
+    background-color: var(--btncolor);
+    color: white;
+    cursor: pointer;
+}
+
+.geral form .btn-comun:hover {
+    opacity: 0.7;
+}
+
+.geral form .noAccount {
+    margin-top: 25px;
+}
+
+.geral form .noAccount #createContainer {
+    background-color: #f4ff7b73;
+    padding: 8px 10px;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.geral form .noAccount #createContainer:hover {
+    opacity: 0.6;
+}
+
+
+.createContainer form > .boxBtns {
+    border: none;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-around;
+}
+
+.createContainer form > .boxBtns #btnCancel {
+    background-color: rgba(211, 211, 211, 0.584);
+    padding: 8px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.createContainer form > .boxBtns #btnCancel:hover {
+    opacity: 0.8;
 }
