@@ -1,9 +1,15 @@
+// ========= CONFIG OF FIREBASE ===========
+
 import { initializeApp } from 'firebase/app';
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword} from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
 
 
-window.addEventListener("DOMContentLoaded", () => {
+
+// ===================== END CONFIG ========================
+
+
+window.addEventListener("DOMContentLoaded", (e) => {
     const boxLogin = document.querySelector(".loginContainer")
     const showPassword = document.querySelector(".showPassword")
     const inputPassword = document.querySelector(".inputPassword")
@@ -22,7 +28,7 @@ window.addEventListener("DOMContentLoaded", () => {
     })
 
 // Aqui esta nossa funçao para mostrar a senha
-    showPassword.addEventListener("click", () => {
+    showPassword.addEventListener("click", (e) => {
         if (inputPassword.type === 'password') {
             inputPassword.type = 'text';
             showPassword.src = "/src/imgs/visibility_off.png"
@@ -37,75 +43,79 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
     // Vamos criar a funcao para criar conta de usuario
-    // function createUser(name, email, password) {
-    //     const firebaseConfig = {
-    //         apiKey: "AIzaSyDovhE50Mzo6TeVAxTayFDSuHP5dnMtlgs",
-    //         authDomain: "cashmax-v1.firebaseapp.com",
-    //         projectId: "cashmax-v1",
-    //         storageBucket: "cashmax-v1.appspot.com",
-    //         messagingSenderId: "381446748900",
-    //         appId: "1:381446748900:web:f4481d87c4e7c7de300af1"
-    //     }
+    const firebaseConfig = {
+            apiKey: process.env.API_KEY,
+            authDomain: process.env.AUTH_DOMAIN,
+            projectId: process.env.PROJECT_ID,
+            storageBucket: process.env.STORAGE_BUCKET,
+            messagingSenderId: process.env.MESSAGING_SENDERID,
+            appId: process.env.APPID
+    }
 
-    //     // Initialize Firebase
-    //     const app = initializeApp(firebaseConfig);
-    //     const auth = getAuth(app);
-    //     const db = getFirestore(app);
+    console.log(process.env.API_KEY);
 
-    //     // Example of using Firebase auth
-    //     signInWithEmailAndPassword(auth, email, password)
-    //         .then((userCredential) => {
-    //             // Signed in
-    //             const user = userCredential.user;
-    //             console.log(user);
-    //             // ...
-    //         })
-    //         .catch((error) => {
-    //             const errorCode = error.code;
-    //             const errorMessage = error.message;
-    //             console.log(errorCode);
-    //             // ...
-    //         });
+    
+    function getUser(name, email, password) {
 
-    // }
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
 
-    // createUser("wilhemmaxime90@gmail.com", "@Wilhem90" )
+        // Example of using Firebase auth
+        signInWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                // Signed in
+                const user = userCredential.user.uid;
+                console.log(user);
+                // ...
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                console.log(errorCode);
+                // ...
+            });
+
+    }
+
+    getUser(" ","wilhemmaxime97@gmail.com", "@Wilhem90" )
 
 
 
 
-// Configuração do Firebase
-const firebaseConfig = {
-    apiKey: "YOUR_API_KEY",
-    authDomain: "YOUR_AUTH_DOMAIN",
-    projectId: "YOUR_PROJECT_ID",
-    storageBucket: "YOUR_STORAGE_BUCKET",
-    messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-    appId: "YOUR_APP_ID"
-};
+// // Configuração do Firebase
+// const firebaseConfig = {
+//     apiKey: "AIzaSyDovhE50Mzo6TeVAxTayFDSuHP5dnMtlgs",
+//   authDomain: "cashmax-v1.firebaseapp.com",
+//   projectId: "cashmax-v1",
+//   storageBucket: "cashmax-v1.appspot.com",
+//   messagingSenderId: "381446748900",
+//   appId: "1:381446748900:web:f4481d87c4e7c7de300af1"
+// };
 
-// Inicializar o Firebase
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
+// // Inicializar o Firebase
+// const app = initializeApp(firebaseConfig);
+// const auth = getAuth(app);
 
-// Definir função para criar usuário
-function createUser(email, password) {
-    return createUserWithEmailAndPassword(auth, email, password);
-}
+// // Definir função para criar usuário
+// function createUser(email, password) {
+//     createUserWithEmailAndPassword(auth, email, password)
+//     .then((userCredential) => {
+//         // Novo usuário criado
+//         const user = userCredential.user;
+//         console.log('Usuário criado:', user);
+//     })
+//     .catch((error) => {
+//         // Erro ao criar usuário
+//         const errorCode = error.code;
+//         const errorMessage = error.message;
+//         console.error('Erro ao criar usuário:', errorCode, errorMessage);
+//     });
+// }
 
-// Exemplo de uso da função
-createUser("wilhemmaxime90@gmail.com", "@Wilhem90")
-    .then((userCredential) => {
-        // Novo usuário criado
-        const user = userCredential.user;
-        console.log('Usuário criado:', user);
-    })
-    .catch((error) => {
-        // Erro ao criar usuário
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.error('Erro ao criar usuário:', errorCode, errorMessage);
-    });
+// // Exemplo de uso da função
+// createUser("wilhemmaxime97@gmail.com", "@Wilhem90")
 
 
 })
