@@ -13,9 +13,11 @@
     "build": "webpack --mode development",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon --exec \"npm run build\" --watch ./src"
-
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "firebase": "^10.11.1"
+  }
 }
