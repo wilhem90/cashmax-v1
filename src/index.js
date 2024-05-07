@@ -1,6 +1,7 @@
 window.addEventListener("DOMContentLoaded", () => {
     const boxLogin = document.querySelector(".loginContainer")
     const showPassword = document.querySelector(".showPassword")
+    const inputPassword = document.querySelector(".inputPassword")
     const boxCreate = document.querySelector(".createContainer")
     const showBoxSignUp = document.getElementById("createContainer")
     const showBoxLogin = document.getElementById("btnCancel")
@@ -15,9 +16,24 @@ window.addEventListener("DOMContentLoaded", () => {
         boxLogin.classList.remove("hidden")
     })
 
-
+// Aqui esta nossa funçao para mostrar a senha
     showPassword.addEventListener("click", () => {
-        showPassword.classList.toggle("show-pass")        
+        if (inputPassword.type === 'password') {
+            inputPassword.type = 'text';
+            showPassword.src = "/src/imgs/visibility_off.png"
+        } else {
+            inputPassword.type = 'password';
+            showPassword.src = "/src/imgs/visibility_FILL0.png"
+        }     
     })
+
+
+
+
+
+    // Vamos criar a funcao para criar conta de usuario
+    function createUser(name, email, password) {
+        
+    }
 
 })
