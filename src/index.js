@@ -9,7 +9,7 @@ import { getFirestore } from 'firebase/firestore';
 // ===================== END CONFIG ========================
 
 
-window.addEventListener("DOMContentLoaded", (e) => {
+window.addEventListener("DOMContentLoaded", () => {
     const boxLogin = document.querySelector(".loginContainer")
     const showPassword = document.querySelector(".showPassword")
     const inputPassword = document.querySelector(".inputPassword")
@@ -28,7 +28,7 @@ window.addEventListener("DOMContentLoaded", (e) => {
     })
 
 // Aqui esta nossa funçao para mostrar a senha
-    showPassword.addEventListener("click", (e) => {
+    showPassword.addEventListener("click", () => {
         if (inputPassword.type === 'password') {
             inputPassword.type = 'text';
             showPassword.src = "/src/imgs/visibility_off.png"
@@ -52,7 +52,6 @@ window.addEventListener("DOMContentLoaded", (e) => {
             appId: process.env.APPID
     }
 
-    console.log(process.env.API_KEY);
 
     
     function getUser(name, email, password) {
