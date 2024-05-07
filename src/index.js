@@ -28,7 +28,7 @@ window.addEventListener("DOMContentLoaded", () => {
     })
 
 // Aqui esta nossa funçao para mostrar a senha
-    showPassword.addEventListener("click", () => {
+    showPassword.addEventListener("click", (e) => {
         if (inputPassword.type === 'password') {
             inputPassword.type = 'text';
             showPassword.src = "/src/imgs/visibility_off.png"
@@ -65,9 +65,10 @@ window.addEventListener("DOMContentLoaded", () => {
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 // Signed in
-                const user = userCredential.user.uid;
+                const user = userCredential.user.accessToken;
                 console.log(user);
                 // ...
+
             })
             .catch((error) => {
                 const errorCode = error.code;
@@ -79,9 +80,18 @@ window.addEventListener("DOMContentLoaded", () => {
     }
 
     getUser(" ","wilhemmaxime97@gmail.com", "@Wilhem90" )
-
-
-
+    
+    async function getAllUser(params) {
+        fetch('http://localhost:3030/api/users')
+  .then(response => response.json())
+  .then(data => {
+    console.log(data); // Aqui estão os usuários retornados pelo backend
+  })
+  .catch(error => {
+    console.error('Erro ao buscar usuários:', error);
+  });
+    } 
+    getAllUser()
 
 // // Configuração do Firebase
 // const firebaseConfig = {
